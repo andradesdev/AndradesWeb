@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Currículum</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Enlace a Google Fonts para una mejor tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Encabezado principal con el nombre y menú de navegación -->
+    <header>
+        <div class="container">
+            <h1>Mi Nombre</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección "Sobre mí" -->
+    <section id="sobre-mi" class="section">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Hola, soy un desarrollador web con experiencia en la creación de sitios web modernos y eficientes...</p>
+        </div>
+    </section>
+
+    <!-- Sección "Proyectos" -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <h2>Proyectos</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción breve del proyecto 1...</p>
+                </div>
+                <div class="project-card">
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción breve del proyecto 2...</p>
+                </div>
+                <!-- Añadir más proyectos según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección "Habilidades" -->
+    <section id="habilidades" class="section">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <div class="skill-bar" style="width: 90%"></div>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <div class="skill-bar" style="width: 80%"></div>
+                </div>
+                <!-- Añadir más habilidades según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección "Contacto" -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu email" required>
+                <textarea id="message" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
