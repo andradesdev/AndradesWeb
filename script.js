@@ -8,9 +8,9 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Cambia al ícono de sol
 }
 
+// Alternar el modo oscuro al hacer clic en el botón
 darkModeToggle.addEventListener('click', () => {
-    // Alternar la clase 'dark-mode' en el body
-    body.classList.toggle('dark-mode');
+    body.classList.toggle('dark-mode'); // Alternar la clase 'dark-mode' en el body
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('dark-mode', 'enabled'); // Guardar el estado en localStorage
         darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Cambia al ícono de sol
@@ -20,14 +20,15 @@ darkModeToggle.addEventListener('click', () => {
     }
 });
 
-// Validación del Formulario de Contacto
-const form = document.getElementById('contact-form');
+// Envío del formulario con Ajax
+const form = document.querySelector('form'); // Asegúrate de que el selector corresponda al formulario
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault(); // Prevenir el envío predeterminado del formulario
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const formData = new FormData(form);
+    const name = formData.get('name').trim();
+    const email = formData.get('email').trim();
+    const message = formData.get('message').trim();
 
     // Validar que los campos no estén vacíos
     if (name === '' || email === '' || message === '') {
@@ -42,8 +43,23 @@ form.addEventListener('submit', function (e) {
         return;
     }
 
-    alert(`Gracias, ${name}. Hemos recibido tu mensaje.`);
-    form.reset(); // Restablecer el formulario después de enviar
+    // Simulación de envío usando Fetch API
+    fetch('ruta-de-tu-api', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => {
+            if (response.ok) {
+                alert(`Gracias, ${name}. Hemos recibido tu mensaje.`);
+                form.reset(); // Limpiar el formulario tras el envío exitoso
+            } else {
+                alert('Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.');
+        });
 });
 
 // Slider de Proyectos
@@ -53,12 +69,14 @@ let currentSlide = 0;
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 
+// Evento para el botón siguiente
 nextBtn.addEventListener('click', () => {
     slides[currentSlide].classList.remove('active'); // Ocultar slide actual
     currentSlide = (currentSlide + 1) % slides.length; // Ir al siguiente slide
     slides[currentSlide].classList.add('active'); // Mostrar el nuevo slide
 });
 
+// Evento para el botón anterior
 prevBtn.addEventListener('click', () => {
     slides[currentSlide].classList.remove('active'); // Ocultar slide actual
     currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Ir al slide anterior
@@ -74,14 +92,58 @@ window.addEventListener('scroll', () => {
 
         // Animar la barra de progreso solo cuando esté visible en la pantalla
         if (skillPosition < screenPosition) {
-            // Asegúrate de que el atributo 'style' y 'width' están presentes
-            const styleAttr = skill.parentElement.getAttribute('style');
+            const styleAttr = skill.parentElement.getAttribute('style'); // Obtener el atributo de estilo
             if (styleAttr) {
-                const widthMatch = styleAttr.match(/width:\s?(\d+%)/);
+                const widthMatch = styleAttr.match(/width:\s?(\d+%)/); // Extraer el porcentaje de ancho
                 if (widthMatch) {
-                    skill.style.width = widthMatch[1];
+                    skill.style.width = widthMatch[1]; // Aplicar el ancho a la barra de progreso
                 }
             }
         }
+    });
+});
+
+// Desplazamiento suave para los enlaces de navegación
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetSection = document.querySelector(this.getAttribute('href')); // Obtener la sección de destino
+        targetSection.scrollIntoView({
+            behavior: 'smooth' // Desplazamiento suave al hacer clic en los enlaces
+        });
+    });
+});
+
+// Mostrar elementos con animación al desplazarse
+const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+window.addEventListener('scroll', () => {
+    animatedElements.forEach(element => {
+        const position = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        // Añadir clase 'visible' cuando el elemento está en la posición deseada
+        if (position < screenPosition) {
+            element.classList.add('visible');
+        }
+    });
+});
+
+// Mostrar el botón de "Volver al inicio" al desplazarse hacia abajo
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block'; // Mostrar botón cuando se baja 300px
+    } else {
+        backToTopButton.style.display = 'none'; // Ocultar botón al volver hacia arriba
+    }
+});
+
+// Acción del botón para volver al inicio
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Desplazamiento suave al hacer clic en el botón
     });
 });

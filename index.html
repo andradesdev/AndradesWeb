@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>andradesWeb</title>
+    <!-- Enlace a archivo CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Fuente Roboto desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Enlace a Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<main>
+
 <body>
     <!-- Cabecera con navegación y botón de modo oscuro -->
     <header>
@@ -36,10 +37,14 @@
     </header>
 
     <!-- Sección Sobre mí -->
-    <section id="sobre-mi" class="section">
-        <div class="container">
-            <h2>Sobre mí</h2>
-            <p>Hola, soy un desarrollador web con experiencia en la creación de sitios web modernos y eficientes...</p>
+    <section id="sobre-mi" class="section animate-on-scroll">
+        <div class="container sobre-mi-container">
+            <!-- Imagen de perfil al lado del texto "Sobre mí" -->
+            <img src="images/pfp.jpg" alt="Foto de perfil" class="profile-pic">
+            <div class="sobre-mi-texto">
+                <h2>Sobre mí</h2>
+                <p>Hola, soy un desarrollador web con experiencia en la creación de sitios web modernos y eficientes...</p>
+            </div>
         </div>
     </section>
 
@@ -103,8 +108,20 @@
         </div>
     </section>
 
+    <!-- Botón para volver al inicio -->
+    <button id="back-to-top" aria-label="Volver al inicio"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Pie de página con iconos de redes sociales -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/tu-usuario" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/tu-usuario" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
     <!-- Enlace al archivo JavaScript -->
     <script src="script.js"></script>
 </body>
-</main>
+
 </html>
