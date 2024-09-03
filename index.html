@@ -34,6 +34,8 @@
                 <i class="fas fa-moon"></i>
             </button>
         </div>
+    <!-- Funcion de Busqueda -->
+        <input type="text" id="search" placeholder="Buscar...">
     </header>
 
     <!-- Sección Sobre mí -->
@@ -92,6 +94,72 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!--Efecto de Desplazamiento Parallax  -->
+
+    <section id="parallax" class="parallax">
+        <div class="content">
+            <h2>Texto sobre el fondo Parallax</h2>
+            <p>Contenido adicional aquí...</p>
+        </div>
+    </section>
+    
+<!-- Galeria de Imagenees -->
+    <section id="galeria" class="section">
+        <div class="container">
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="images/img1.jpg" alt="Imagen 1" class="gallery-item">
+                <img src="images/img2.jpg" alt="Imagen 2" class="gallery-item">
+                <img src="images/img3.jpg" alt="Imagen 3" class="gallery-item">
+            </div>
+            <div id="lightbox" class="lightbox">
+                <span class="close">&times;</span>
+                <img class="lightbox-content" id="lightbox-image">
+            </div>
+        </div>
+    </section>
+
+<!-- Suscripcion al Nwesletter -->
+    <section id="newsletter" class="section">
+        <div class="container">
+            <h2>Suscríbete a nuestro Newsletter</h2>
+            <form id="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Tu email" required aria-label="Tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+<!-- Testimonio en Carrusel -->
+    <section id="testimonios" class="section">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <p>"Este es el mejor servicio que he recibido. ¡Altamente recomendado!"</p>
+                    <cite>- Cliente 1</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Una experiencia increíble. Definitivamente volveré."</p>
+                    <cite>- Cliente 2</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Servicio de alta calidad y atención al detalle."</p>
+                    <cite>- Cliente 3</cite>
+                </div>
+            </div>
+            <button class="slider-btn prev-testimonial" aria-label="Testimonio anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-testimonial" aria-label="Testimonio siguiente"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+<!-- Mapa Interactivo  -->
+    <section id="mapa" class="section">
+        <div class="container">
+            <h2>Ubicación</h2>
+            <div id="map"></div>
         </div>
     </section>
 
