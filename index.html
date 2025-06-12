@@ -1,80 +1,419 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento HTML5 -->
 <html lang="es">
+<!-- Elemento raíz del documento, especifica idioma español -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manuel Andrades Pavía - Web Personal</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Cabecera del documento (metadatos, enlaces, título) -->
+    <meta charset="UTF-8">
+    <!-- Especifica la codificación de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista para dispositivos móviles -->
+    <title>andradesDev</title>
+    <!-- Título que aparece en la pestaña del navegador -->
+    
+    <style>
+        /* INICIO DE ESTILOS CSS */
+        
+        /* Estilos generales del cuerpo del documento */
+        body {
+            margin: 0; /* Elimina márgenes por defecto */
+            padding: 0; /* Elimina padding por defecto */
+            font-family: Arial, sans-serif; /* Fuente principal */
+            background-color: #121212; /* Color de fondo oscuro */
+            color: white; /* Color de texto principal */
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            text-align: center; /* Centra el contenido */
+            padding: 20px 0; /* Espaciado interno arriba/abajo */
+            background-color: #1a1a1a; /* Color de fondo */
+        }
+
+        /* Estilos para el título del encabezado */
+        header h1 {
+            margin: 0; /* Elimina margen por defecto */
+            color: #ffffff; /* Color de texto blanco */
+        }
+
+        /* Contenedor principal del contenido */
+        .container {
+            max-width: 800px; /* Ancho máximo del contenido */
+            margin: 0 auto; /* Centra el contenedor horizontalmente */
+            padding: 40px 60px; /* Espaciado interno: 40px arriba/abajo, 60px lados */
+        }
+
+        /* Sección del perfil (foto + información) */
+        .profile-section {
+            display: flex; /* Usa flexbox para disposición */
+            margin-bottom: 40px; /* Margen inferior */
+            align-items: center; /* Centra verticalmente los items */
+        }
+
+        /* Contenedor de la foto */
+        .photo-container {
+            flex: 0 0 150px; /* Tamaño fijo: no crece, no encoge, 150px base */
+            padding: 20px; /* Espaciado interno */
+        }
+
+        /* Placeholder para la foto */
+        .photo-placeholder {
+            width: 150px; /* Ancho fijo */
+            height: 150px; /* Altura fija (cuadrado) */
+            background-color: #333; /* Color de fondo */
+            display: flex; /* Flexbox para centrar contenido */
+            align-items: center; /* Centrado vertical */
+            justify-content: center; /* Centrado horizontal */
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Oculta contenido que sobresale */
+        }
+
+        /* Contenedor de información (nombre, usuario, redes) */
+        .info-container {
+            flex: 1; /* Ocupa todo el espacio disponible */
+            padding: 20px; /* Espaciado interno */
+        }
+
+        /* Estilos para el nombre */
+        .name {
+            font-size: 2.2em; /* Tamaño de fuente */
+            margin-bottom: 10px; /* Margen inferior */
+            color: #ffffff; /* Color de texto */
+        }
+
+        /* Estilos para el nombre de usuario */
+        .username {
+            font-size: 1.3em; /* Tamaño de fuente */
+            color: #aaaaaa; /* Color de texto gris */
+            margin-bottom: 20px; /* Margen inferior */
+        }
+
+        /* Contenedor de iconos sociales */
+        .social-icons {
+            display: flex; /* Disposición en fila */
+            gap: 15px; /* Espacio entre elementos */
+        }
+
+        /* Estilos para cada icono social */
+        .social-icon {
+            width: 40px; /* Ancho fijo */
+            height: 40px; /* Altura fija */
+            background-color: #333; /* Color de fondo */
+            border-radius: 50%; /* Forma circular */
+            display: flex; /* Flexbox para centrar contenido */
+            align-items: center; /* Centrado vertical */
+            justify-content: center; /* Centrado horizontal */
+            cursor: pointer; /* Cursor tipo pointer */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+
+        /* Efecto hover para iconos sociales */
+        .social-icon:hover {
+            background-color: #555; /* Cambio de color al pasar mouse */
+        }
+
+        /* Sección "Sobre mí" */
+        .about-me {
+            margin-bottom: 40px; /* Margen inferior */
+            line-height: 1.6; /* Altura de línea */
+            background-color: #1e1e1e; /* Color de fondo */
+            padding: 25px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        /* Estilos para títulos de sección */
+        .section-title {
+            font-size: 1.8em; /* Tamaño de fuente */
+            margin-bottom: 20px; /* Margen inferior */
+            color: #ffffff; /* Color de texto */
+        }
+
+        /* Contenedor de proyectos */
+        .projects-container {
+            display: flex; /* Disposición flexible */
+            flex-direction: column; /* Elementos en columna */
+            gap: 20px; /* Espacio entre elementos */
+            margin-bottom: 40px; /* Margen inferior */
+            width: 100%; /* Ancho completo */
+        }
+
+        /* Cajas de proyectos */
+        .project-box {
+            width: 100%; /* Ancho completo */
+            height: 120px; /* Altura fija */
+            border-radius: 10px; /* Bordes redondeados */
+            display: flex; /* Flexbox para centrar contenido */
+            align-items: center; /* Centrado vertical */
+            justify-content: center; /* Centrado horizontal */
+            cursor: pointer; /* Cursor tipo pointer */
+            font-weight: bold; /* Texto en negrita */
+            color: black; /* Color de texto */
+            transition: transform 0.3s; /* Transición suave */
+            font-size: 1.1em; /* Tamaño de fuente */
+        }
+
+        /* Efecto hover para cajas de proyectos */
+        .project-box:hover {
+            transform: scale(1.01); /* Ligero aumento de tamaño */
+        }
+
+        /* Contenedor de contacto */
+        .contact-container {
+            display: flex; /* Disposición flexible */
+            flex-direction: column; /* Elementos en columna */
+            gap: 20px; /* Espacio entre elementos */
+            margin-bottom: 40px; /* Margen inferior */
+            width: 100%; /* Ancho completo */
+        }
+
+        /* Cajas de contacto */
+        .contact-box {
+            width: 100%; /* Ancho completo */
+            height: 80px; /* Altura fija */
+            border-radius: 10px; /* Bordes redondeados */
+            display: flex; /* Flexbox para centrar contenido */
+            align-items: center; /* Centrado vertical */
+            justify-content: center; /* Centrado horizontal */
+            cursor: pointer; /* Cursor tipo pointer */
+            font-weight: bold; /* Texto en negrita */
+            color: black; /* Color de texto */
+            transition: transform 0.3s; /* Transición suave */
+            font-size: 1.1em; /* Tamaño de fuente */
+        }
+
+        /* Efecto hover para cajas de contacto */
+        .contact-box:hover {
+            transform: scale(1.01); /* Ligero aumento de tamaño */
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center; /* Centra el contenido */
+            padding: 20px; /* Espaciado interno */
+            margin-top: 40px; /* Margen superior */
+        }
+
+        /* Icono del footer */
+        .footer-icon {
+            font-size: 2em; /* Tamaño de fuente */
+            margin-bottom: 10px; /* Margen inferior */
+        }
+
+        /* Colores para las cajas (clases de utilidad) */
+        .box1 { background-color: #f94144; } /* Rojo */
+        .box2 { background-color: #f3722c; } /* Naranja */
+        .box3 { background-color: #f8961e; } /* Amarillo oscuro */
+        .box4 { background-color: #f9c74f; } /* Amarillo */
+        .box5 { background-color: #90be6d; } /* Verde */
+        .box6 { background-color: #43aa8b; } /* Verde azulado */
+        .box7 { background-color: #577590; } /* Azul */
+
+        /* Estilos para los popups */
+        .popup {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Posición fija en pantalla */
+            top: 0; /* Posición desde arriba */
+            left: 0; /* Posición desde izquierda */
+            width: 100%; /* Ancho completo */
+            height: 100%; /* Altura completa */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+            z-index: 100; /* Capa superior */
+            align-items: center; /* Centrado vertical */
+            justify-content: center; /* Centrado horizontal */
+        }
+
+        /* Contenido del popup */
+        .popup-content {
+            background-color: #1e1e1e; /* Color de fondo */
+            padding: 30px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            max-width: 600px; /* Ancho máximo */
+            width: 80%; /* Ancho relativo */
+            position: relative; /* Posición relativa */
+        }
+
+        /* Botón para cerrar popup */
+        .close-popup {
+            position: absolute; /* Posición absoluta */
+            top: 10px; /* Distancia desde arriba */
+            right: 15px; /* Distancia desde derecha */
+            font-size: 1.5em; /* Tamaño de fuente */
+            cursor: pointer; /* Cursor tipo pointer */
+        }
+
+        /* Estilos para el formulario de contacto */
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            margin-bottom: 15px; /* Margen inferior */
+            background-color: #333; /* Color de fondo */
+            border: none; /* Sin bordes */
+            color: white; /* Color de texto */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        /* Botón del formulario */
+        .contact-form button {
+            background-color: #f94144; /* Color de fondo */
+            color: white; /* Color de texto */
+            border: none; /* Sin bordes */
+            padding: 10px 20px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cursor tipo pointer */
+        }
+
+        /* Media queries para diseño responsive */
+        @media (max-width: 768px) {
+            /* Ajustes para pantallas menores a 768px */
+            .container {
+                padding: 30px 20px; /* Menos padding en móviles */
+            }
+            
+            /* Cambia la dirección del perfil a columna en móviles */
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            /* Margen inferior para la foto en móviles */
+            .photo-container {
+                margin-bottom: 20px;
+            }
+            
+            /* Centra los iconos sociales en móviles */
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <header class="bg-gray-900 text-white p-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">Manuel Andrades Pavía</h1>
-      <nav class="space-x-4">
-        <a href="#sobre-mi" class="hover:underline">Sobre mí</a>
-        <a href="#proyectos" class="hover:underline">Proyectos</a>
-        <a href="#blog" class="hover:underline">Blog</a>
-        <a href="#tecnologias" class="hover:underline">Tecnologías</a>
-        <a href="#certificaciones" class="hover:underline">Certificaciones</a>
-        <a href="#contacto" class="hover:underline">Contacto</a>
-      </nav>
+<body>
+    <!-- Encabezado de la página -->
+    <header>
+        <h1>andradesDev</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Sección de perfil -->
+        <div class="profile-section">
+            <div class="photo-container">
+                <div class="photo-placeholder">
+                    [FOTO PERSONAL] <!-- Placeholder para la foto -->
+                </div>
+            </div>
+            <div class="info-container">
+                <div class="name">Manuel Andrades</div> <!-- Nombre -->
+                <div class="username">@andradesdev</div> <!-- Usuario -->
+                <div class="social-icons">
+                    <!-- Iconos sociales (placeholders) -->
+                    <div class="social-icon">Git</div> <!-- GitHub -->
+                    <div class="social-icon">Lin</div> <!-- LinkedIn -->
+                    <div class="social-icon">Tw</div> <!-- Twitter -->
+                    <div class="social-icon">Ig</div> <!-- Instagram -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección "Sobre mí" -->
+        <div class="about-me">
+            <h2 class="section-title">Sobre mí</h2>
+            <p>Texto placeholder que describe tu carrera profesional. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+        </div>
+
+        <!-- Sección de proyectos -->
+        <h2 class="section-title">Proyectos</h2>
+        <div class="projects-container">
+            <!-- Cajas de proyectos (placeholders) -->
+            <div class="project-box box1" onclick="openPopup('popup1')">Proyecto 1</div>
+            <div class="project-box box2" onclick="openPopup('popup2')">Proyecto 2</div>
+            <div class="project-box box3" onclick="openPopup('popup3')">Proyecto 3</div>
+            <div class="project-box box4" onclick="openPopup('popup4')">Proyecto 4</div>
+        </div>
+
+        <!-- Sección de contacto -->
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-container">
+            <!-- Cajas de contacto -->
+            <div class="contact-box box5" onclick="openPopup('contact-popup')">Formulario de contacto</div>
+            <div class="contact-box box6" onclick="window.location.href='mailto:contacto@andradesdev.com'">Enviar email</div>
+        </div>
     </div>
-  </header>
 
-  <main class="max-w-4xl mx-auto p-6">
-    <section id="sobre-mi" class="mb-12">
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Sobre mí</h2>
-      <p>Soy Manuel, desarrollador full stack con experiencia en Flutter, Node.js y más. Apasionado por el código limpio y funcional.</p>
-    </section>
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-icon">[ICONO]</div> <!-- Icono placeholder -->
+        <div>&copy; 2023 andradesDev. Todos los derechos reservados.</div> <!-- Copyright -->
+    </footer>
 
-    <section id="proyectos" class="mb-12">
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Proyectos</h2>
-      <div class="bg-white p-4 rounded shadow mb-4">
-        <h3 class="font-semibold text-lg">FocusHub</h3>
-        <p>App Flutter para gestionar enfoque y productividad.</p>
-      </div>
-      <div class="bg-white p-4 rounded shadow mb-4">
-        <h3 class="font-semibold text-lg">Simulador Blockchain</h3>
-        <p>Backend en Java para simular una blockchain y plataforma de trading.</p>
-      </div>
-    </section>
+    <!-- Popups de proyectos (hidden por defecto) -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup('popup1')">&times;</span> <!-- Botón cerrar -->
+            <h3>Proyecto 1</h3>
+            <p>Descripción detallada del proyecto 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 
-    <section id="blog" class="mb-12">
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Blog</h2>
-      <p>Próximamente compartiré artículos sobre desarrollo web, móvil y ciberseguridad.</p>
-    </section>
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup('popup2')">&times;</span>
+            <h3>Proyecto 2</h3>
+            <p>Descripción detallada del proyecto 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 
-    <section id="tecnologias" class="mb-12">
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Tecnologías</h2>
-      <ul class="list-disc list-inside">
-        <li>Flutter, Dart, Kotlin</li>
-        <li>Node.js, Express, Java</li>
-        <li>Firebase, MongoDB, SQL</li>
-        <li>GitHub Actions, Docker, AWS</li>
-      </ul>
-    </section>
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup('popup3')">&times;</span>
+            <h3>Proyecto 3</h3>
+            <p>Descripción detallada del proyecto 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 
-    <section id="certificaciones" class="mb-12">
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Certificaciones</h2>
-      <ul class="list-disc list-inside">
-        <li>Certificación Profesional en Desarrollo de Aplicaciones Multiplataforma (2025)</li>
-        <li>Curso de Ciberseguridad para Desarrolladores - OpenWeb (en progreso)</li>
-      </ul>
-    </section>
+    <div id="popup4" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup('popup4')">&times;</span>
+            <h3>Proyecto 4</h3>
+            <p>Descripción detallada del proyecto 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
 
-    <section id="contacto" class="mb-12">
-      <h2 class="text-2xl font-semibold border-b pb-2 mb-4">Contacto</h2>
-      <form action="https://formspree.io/f/your-id" method="POST" class="bg-white p-4 rounded shadow space-y-4">
-        <input type="text" name="name" placeholder="Tu nombre" class="w-full p-2 border rounded" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" class="w-full p-2 border rounded" required>
-        <textarea name="message" rows="4" placeholder="Tu mensaje" class="w-full p-2 border rounded" required></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
-      </form>
-    </section>
-  </main>
+    <!-- Popup de contacto -->
+    <div id="contact-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup('contact-popup')">&times;</span>
+            <h3>Contacto</h3>
+            <!-- Formulario de contacto -->
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Asunto" required>
+                <textarea rows="5" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 
-  <footer class="bg-gray-200 text-center text-sm p-4">
-    © 2025 Manuel Andrades Pavía. Todos los derechos reservados.
-  </footer>
+    <!-- JavaScript para funcionalidad de popups -->
+    <script>
+        // Función para abrir popups
+        function openPopup(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        // Función para cerrar popups
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Cerrar popup al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            if (event.target.className === "popup") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
