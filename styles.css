@@ -1,0 +1,456 @@
+/* INICIO DE ESTILOS CSS */
+        
+/* Estilos generales del cuerpo del documento */
+body {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina padding por defecto */
+    font-family: 'Poppins', sans-serif; /* Fuente principal */
+    background-color: #121212; /* Color de fondo oscuro */
+    color: white; /* Color de texto principal */
+    background-image: url('assets/fondoweb.png'); /* Imagen de fondo personalizada */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-attachment: fixed; /* Fondo fijo al hacer scroll */
+}
+
+/* Estilos para el encabezado */
+header {
+    text-align: left; /* Alineación a la izquierda */
+    padding: 20px 40px; /* Espaciado interno */
+    background-color: #0F1012; /* Color de fondo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Estilos para el título del encabezado */
+header h1 {
+    margin: 0; /* Elimina margen por defecto */
+    color: #00FF88; /* Color de texto verde */
+    font-size: 2em; /* Tamaño de fuente */
+}
+
+/* Contenedor principal del contenido */
+.container {
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 40px 60px; /* Espaciado interno */
+}
+
+/* Sección del perfil (foto + información) */
+.profile-section {
+    display: flex; /* Usa flexbox para disposición */
+    margin-bottom: 40px; /* Margen inferior */
+    align-items: center; /* Centra verticalmente los items */
+    gap: 30px; /* Espacio entre elementos */
+}
+
+/* Contenedor de la foto */
+.photo-container {
+    flex: 0 0 150px; /* Tamaño fijo */
+}
+
+/* Placeholder para la foto */
+.photo-placeholder {
+    width: 150px; /* Ancho fijo */
+    height: 150px; /* Altura fija (cuadrado) */
+    background-color: #333; /* Color de fondo */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que sobresale */
+    border: 3px solid #00FF88; /* Borde verde */
+    transition: transform 0.3s; /* Transición suave */
+}
+
+.photo-placeholder:hover {
+    transform: scale(1.05); /* Efecto de escala al hover */
+}
+
+/* Contenedor de información (nombre, usuario, redes) */
+.info-container {
+    flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* Estilos para el nombre */
+.name {
+    font-size: 2.2em; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen inferior */
+    color: #ffffff; /* Color de texto */
+    font-weight: 600; /* Grosor de fuente */
+}
+
+/* Estilos para el nombre de usuario */
+.username {
+    font-size: 1.3em; /* Tamaño de fuente */
+    color: #00FF88; /* Color de texto verde */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Contenedor de iconos sociales */
+.social-icons {
+    display: flex; /* Disposición en fila */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+/* Estilos para cada icono social */
+.social-icon {
+    width: 40px; /* Ancho fijo */
+    height: 40px; /* Altura fija */
+    background-color: #333; /* Color de fondo */
+    border-radius: 50%; /* Forma circular */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    cursor: pointer; /* Cursor tipo pointer */
+    transition: all 0.3s; /* Transición suave */
+    color: white; /* Color del icono */
+    font-size: 1.2em; /* Tamaño del icono */
+    text-decoration: none; /* Elimina subrayado */
+}
+
+/* Efecto hover para iconos sociales */
+.social-icon:hover {
+    background-color: #00FF88; /* Cambio de color al pasar mouse */
+    transform: translateY(-3px); /* Efecto de levitación */
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); /* Sombra verde */
+}
+
+/* Color especial para el icono de PDF */
+.social-icon .fa-file-pdf {
+    color: #FF6B6B; /* Color rojo para PDF */
+}
+
+/* Sección "Sobre mí" */
+.about-me {
+    margin-bottom: 40px; /* Margen inferior */
+    line-height: 1.6; /* Altura de línea */
+    padding: 30px; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
+    background-color: rgba(30, 30, 30, 0.8); /* Fondo semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-sizing: border-box; /* El padding no afecta el ancho */
+    border-left: 4px solid #00FF88; /* Borde lateral verde */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilos para títulos de sección */
+.section-title {
+    font-size: 1.8em; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Margen inferior */
+    color: #ffffff; /* Color de texto */
+    position: relative; /* Posición relativa */
+    display: inline-block; /* Display inline-block */
+}
+
+.section-title::after {
+    content: ''; /* Pseudoelemento */
+    position: absolute; /* Posición absoluta */
+    bottom: -10px; /* Posición */
+    left: 0; /* Alineación */
+    width: 50px; /* Ancho */
+    height: 3px; /* Altura */
+    background-color: #00FF88; /* Color verde */
+}
+
+/* Contenedor de proyectos */
+.projects-container {
+    display: flex; /* Disposición flexible */
+    flex-direction: column; /* Elementos en columna */
+    gap: 20px; /* Espacio entre elementos */
+    margin-bottom: 40px; /* Margen inferior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Cajas de proyectos */
+.project-box {
+    width: 100%; /* Ancho completo */
+    height: 120px; /* Altura fija */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    cursor: pointer; /* Cursor tipo pointer */
+    font-weight: bold; /* Texto en negrita */
+    color: black; /* Color de texto */
+    transition: all 0.3s ease; /* Transición suave */
+    font-size: 1.1em; /* Tamaño de fuente */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Oculta lo que sobresale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Efecto hover para cajas de proyectos */
+.project-box:hover {
+    transform: translateY(-5px); /* Efecto de levitación */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Efecto de brillo al pasar el mouse */
+.project-box::before {
+    content: ''; /* Pseudoelemento */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Posición */
+    left: -100%; /* Fuera de vista */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    ); /* Gradiente de brillo */
+    transition: 0.5s; /* Transición */
+}
+
+.project-box:hover::before {
+    left: 100%; /* Animación de brillo */
+}
+
+/* Contenedor de contacto */
+.contact-container {
+    display: flex; /* Disposición flexible */
+    flex-direction: column; /* Elementos en columna */
+    gap: 20px; /* Espacio entre elementos */
+    margin-bottom: 40px; /* Margen inferior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Cajas de contacto */
+.contact-box {
+    width: 100%; /* Ancho completo */
+    height: 80px; /* Altura fija */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    cursor: pointer; /* Cursor tipo pointer */
+    font-weight: bold; /* Texto en negrita */
+    color: black; /* Color de texto */
+    transition: all 0.3s ease; /* Transición suave */
+    font-size: 1.1em; /* Tamaño de fuente */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Oculta lo que sobresale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Efectos hover para cajas de contacto */
+.contact-box:hover {
+    transform: translateY(-5px); /* Efecto de levitación */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.contact-box::before {
+    content: ''; /* Pseudoelemento */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Posición */
+    left: -100%; /* Fuera de vista */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    ); /* Gradiente de brillo */
+    transition: 0.5s; /* Transición */
+}
+
+.contact-box:hover::before {
+    left: 100%; /* Animación de brillo */
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center; /* Centra el contenido */
+    padding: 20px; /* Espaciado interno */
+    margin-top: 40px; /* Margen superior */
+    background-color: rgba(15, 16, 18, 0.8); /* Fondo semitransparente */
+    border-top: 1px solid #333; /* Borde superior */
+}
+
+/* Icono del footer */
+.footer-icon {
+    font-size: 2em; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Margen inferior */
+    color: #00FF88; /* Color verde */
+}
+
+/* Colores para las cajas (clases de utilidad) */
+.box1 { background-color: #f94144; } /* Rojo */
+.box2 { background-color: #f3722c; } /* Naranja */
+.box3 { background-color: #f8961e; } /* Amarillo oscuro */
+.box4 { background-color: #f9c74f; } /* Amarillo */
+.box5 { background-color: #90be6d; } /* Verde */
+.box6 { background-color: #43aa8b; } /* Verde azulado */
+.box7 { background-color: #577590; } /* Azul */
+
+/* Estilos para los popups - VERSIÓN CORREGIDA */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 80%;
+    position: relative;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease 0.1s; /* Retraso pequeño */
+}
+
+.popup.show .popup-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+/* Botón para cerrar popup */
+.close-popup {
+    position: absolute; /* Posición absoluta */
+    top: 10px; /* Distancia desde arriba */
+    right: 15px; /* Distancia desde derecha */
+    font-size: 1.5em; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor tipo pointer */
+    color: #aaa; /* Color gris */
+    transition: color 0.3s; /* Transición suave */
+}
+
+.close-popup:hover {
+    color: #00FF88; /* Color verde al hover */
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+    display: flex; /* Disposición flexible */
+    flex-direction: column; /* Elementos en columna */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno */
+    margin-bottom: 15px; /* Margen inferior */
+    background-color: rgba(51, 51, 51, 0.8); /* Fondo semitransparente */
+    border: 1px solid #444; /* Borde sutil */
+    color: white; /* Color de texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición suave */
+    font-family: 'Poppins', sans-serif; /* Fuente consistente */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00FF88; /* Borde verde al enfocar */
+    outline: none; /* Elimina outline por defecto */
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2); /* Sombra verde */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px; /* Altura mínima */
+}
+
+.contact-form button {
+    background-color: #00FF88; /* Color de fondo verde */
+    color: #121212; /* Color de texto oscuro */
+    border: none; /* Sin bordes */
+    padding: 12px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo pointer */
+    font-weight: bold; /* Texto en negrita */
+    transition: all 0.3s; /* Transición suave */
+    font-family: 'Poppins', sans-serif; /* Fuente consistente */
+    font-size: 1em; /* Tamaño de fuente */
+}
+
+.contact-form button:hover {
+    background-color: #00cc6a; /* Color más oscuro al hover */
+    transform: translateY(-2px); /* Efecto de levitación */
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); /* Sombra verde */
+}
+
+/* Media queries para diseño responsive */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas menores a 768px */
+    .container {
+        padding: 30px 20px; /* Menos padding en móviles */
+    }
+    
+    header {
+        padding: 15px 20px; /* Menos padding en móviles */
+        text-align: center; /* Centrar texto en móviles */
+    }
+    
+    /* Cambia la dirección del perfil a columna en móviles */
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    /* Margen inferior para la foto en móviles */
+    .photo-container {
+        margin-bottom: 20px;
+    }
+    
+    /* Centra los iconos sociales en móviles */
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Ajustes para popups en móviles */
+    .popup-content {
+        width: 90%; /* Más ancho en móviles */
+        padding: 20px; /* Menos padding */
+    }
+
+    /* Ajustes para cajas de proyectos y contacto */
+    .project-box, .contact-box {
+        height: 100px; /* Altura reducida */
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Aplicar animaciones */
+.animate-fade {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.5s ease forwards;
+}

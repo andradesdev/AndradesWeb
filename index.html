@@ -10,287 +10,10 @@
     <!-- Configura la vista para dispositivos móviles -->
     <title>andradesDev</title>
     <!-- Título que aparece en la pestaña del navegador -->
-    
-    <style>
-        /* INICIO DE ESTILOS CSS */
-        
-        /* Estilos generales del cuerpo del documento */
-        body {
-            margin: 0; /* Elimina márgenes por defecto */
-            padding: 0; /* Elimina padding por defecto */
-            font-family: Poppins, sans-serif; /* Fuente principal */
-            background-color: #121212; /* Color de fondo oscuro */
-            color: white; /* Color de texto principal */
-            background-image: url('assets/fondoweb.jpg'); /* Reemplaza con tu imagen */
-            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
-            background-position: center; /* Centra la imagen */
-            background-repeat: no-repeat; /* Evita que se repita */
-        }
-
-        /* Estilos para el encabezado */
-        header {
-            text-align: center; /* Centra el contenido */
-            padding: 20px 0; /* Espaciado interno arriba/abajo */
-            background-color: #1a1a1a; /* Color de fondo */
-        }
-
-        /* Estilos para el título del encabezado */
-        header h1 {
-            margin: 0; /* Elimina margen por defecto */
-            color: #ffffff; /* Color de texto blanco */
-        }
-
-        /* Contenedor principal del contenido */
-        .container {
-            max-width: 800px; /* Ancho máximo del contenido */
-            margin: 0 auto; /* Centra el contenedor horizontalmente */
-            padding: 40px 60px; /* Espaciado interno: 40px arriba/abajo, 60px lados */
-        }
-
-        /* Sección del perfil (foto + información) */
-        .profile-section {
-            display: flex; /* Usa flexbox para disposición */
-            margin-bottom: 40px; /* Margen inferior */
-            align-items: center; /* Centra verticalmente los items */
-        }
-
-        /* Contenedor de la foto */
-        .photo-container {
-            flex: 0 0 150px; /* Tamaño fijo: no crece, no encoge, 150px base */
-            padding: 20px; /* Espaciado interno */
-        }
-
-        /* Placeholder para la foto */
-        .photo-placeholder {
-            width: 150px; /* Ancho fijo */
-            height: 150px; /* Altura fija (cuadrado) */
-            background-color: #333; /* Color de fondo */
-            display: flex; /* Flexbox para centrar contenido */
-            align-items: center; /* Centrado vertical */
-            justify-content: center; /* Centrado horizontal */
-            border-radius: 10px; /* Bordes redondeados */
-            overflow: hidden; /* Oculta contenido que sobresale */
-        }
-
-        /* Contenedor de información (nombre, usuario, redes) */
-        .info-container {
-            flex: 1; /* Ocupa todo el espacio disponible */
-            padding: 20px; /* Espaciado interno */
-        }
-
-        /* Estilos para el nombre */
-        .name {
-            font-size: 2.2em; /* Tamaño de fuente */
-            margin-bottom: 10px; /* Margen inferior */
-            color: #ffffff; /* Color de texto */
-        }
-
-        /* Estilos para el nombre de usuario */
-        .username {
-            font-size: 1.3em; /* Tamaño de fuente */
-            color: #aaaaaa; /* Color de texto gris */
-            margin-bottom: 20px; /* Margen inferior */
-        }
-
-        /* Contenedor de iconos sociales */
-        .social-icons {
-            display: flex; /* Disposición en fila */
-            gap: 15px; /* Espacio entre elementos */
-        }
-
-        /* Estilos para cada icono social */
-        .social-icon {
-            width: 40px; /* Ancho fijo */
-            height: 40px; /* Altura fija */
-            background-color: #333; /* Color de fondo */
-            border-radius: 50%; /* Forma circular */
-            display: flex; /* Flexbox para centrar contenido */
-            align-items: center; /* Centrado vertical */
-            justify-content: center; /* Centrado horizontal */
-            cursor: pointer; /* Cursor tipo pointer */
-            transition: background-color 0.3s; /* Transición suave */
-        }
-
-        /* Efecto hover para iconos sociales */
-        .social-icon:hover {
-            background-color: #555; /* Cambio de color al pasar mouse */
-        }
-
-        /* Sección "Sobre mí" */
-        .about-me {
-            margin-bottom: 40px; /* Margen inferior */
-            line-height: 1.6; /* Altura de línea */
-            /*background-color: #1e1e1e; /* Color de fondo */
-            padding: 25px; /* Espaciado interno */
-            border-radius: 10px; /* Bordes redondeados */
-        }
-
-        /* Estilos para títulos de sección */
-        .section-title {
-            font-size: 1.8em; /* Tamaño de fuente */
-            margin-bottom: 20px; /* Margen inferior */
-            color: #ffffff; /* Color de texto */
-        }
-
-        /* Contenedor de proyectos */
-        .projects-container {
-            display: flex; /* Disposición flexible */
-            flex-direction: column; /* Elementos en columna */
-            gap: 20px; /* Espacio entre elementos */
-            margin-bottom: 40px; /* Margen inferior */
-            width: 100%; /* Ancho completo */
-        }
-
-        /* Cajas de proyectos */
-        .project-box {
-            width: 100%; /* Ancho completo */
-            height: 120px; /* Altura fija */
-            border-radius: 10px; /* Bordes redondeados */
-            display: flex; /* Flexbox para centrar contenido */
-            align-items: center; /* Centrado vertical */
-            justify-content: center; /* Centrado horizontal */
-            cursor: pointer; /* Cursor tipo pointer */
-            font-weight: bold; /* Texto en negrita */
-            color: black; /* Color de texto */
-            transition: transform 0.3s; /* Transición suave */
-            font-size: 1.1em; /* Tamaño de fuente */
-        }
-
-        /* Efecto hover para cajas de proyectos */
-        .project-box:hover {
-            transform: scale(1.01); /* Ligero aumento de tamaño */
-        }
-
-        /* Contenedor de contacto */
-        .contact-container {
-            display: flex; /* Disposición flexible */
-            flex-direction: column; /* Elementos en columna */
-            gap: 20px; /* Espacio entre elementos */
-            margin-bottom: 40px; /* Margen inferior */
-            width: 100%; /* Ancho completo */
-        }
-
-        /* Cajas de contacto */
-        .contact-box {
-            width: 100%; /* Ancho completo */
-            height: 80px; /* Altura fija */
-            border-radius: 10px; /* Bordes redondeados */
-            display: flex; /* Flexbox para centrar contenido */
-            align-items: center; /* Centrado vertical */
-            justify-content: center; /* Centrado horizontal */
-            cursor: pointer; /* Cursor tipo pointer */
-            font-weight: bold; /* Texto en negrita */
-            color: black; /* Color de texto */
-            transition: transform 0.3s; /* Transición suave */
-            font-size: 1.1em; /* Tamaño de fuente */
-        }
-
-        /* Efecto hover para cajas de contacto */
-        .contact-box:hover {
-            transform: scale(1.01); /* Ligero aumento de tamaño */
-        }
-
-        /* Estilos para el pie de página */
-        footer {
-            text-align: center; /* Centra el contenido */
-            padding: 20px; /* Espaciado interno */
-            margin-top: 40px; /* Margen superior */
-        }
-
-        /* Icono del footer */
-        .footer-icon {
-            font-size: 2em; /* Tamaño de fuente */
-            margin-bottom: 10px; /* Margen inferior */
-        }
-
-        /* Colores para las cajas (clases de utilidad) */
-        .box1 { background-color: #f94144; } /* Rojo */
-        .box2 { background-color: #f3722c; } /* Naranja */
-        .box3 { background-color: #f8961e; } /* Amarillo oscuro */
-        .box4 { background-color: #f9c74f; } /* Amarillo */
-        .box5 { background-color: #90be6d; } /* Verde */
-        .box6 { background-color: #43aa8b; } /* Verde azulado */
-        .box7 { background-color: #577590; } /* Azul */
-
-        /* Estilos para los popups */
-        .popup {
-            display: none; /* Oculto por defecto */
-            position: fixed; /* Posición fija en pantalla */
-            top: 0; /* Posición desde arriba */
-            left: 0; /* Posición desde izquierda */
-            width: 100%; /* Ancho completo */
-            height: 100%; /* Altura completa */
-            background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
-            z-index: 100; /* Capa superior */
-            align-items: center; /* Centrado vertical */
-            justify-content: center; /* Centrado horizontal */
-        }
-
-        /* Contenido del popup */
-        .popup-content {
-            background-color: #1e1e1e; /* Color de fondo */
-            padding: 30px; /* Espaciado interno */
-            border-radius: 10px; /* Bordes redondeados */
-            max-width: 600px; /* Ancho máximo */
-            width: 80%; /* Ancho relativo */
-            position: relative; /* Posición relativa */
-        }
-
-        /* Botón para cerrar popup */
-        .close-popup {
-            position: absolute; /* Posición absoluta */
-            top: 10px; /* Distancia desde arriba */
-            right: 15px; /* Distancia desde derecha */
-            font-size: 1.5em; /* Tamaño de fuente */
-            cursor: pointer; /* Cursor tipo pointer */
-        }
-
-        /* Estilos para el formulario de contacto */
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%; /* Ancho completo */
-            padding: 10px; /* Espaciado interno */
-            margin-bottom: 15px; /* Margen inferior */
-            background-color: #333; /* Color de fondo */
-            border: none; /* Sin bordes */
-            color: white; /* Color de texto */
-            border-radius: 5px; /* Bordes redondeados */
-        }
-
-        /* Botón del formulario */
-        .contact-form button {
-            background-color: #f94144; /* Color de fondo */
-            color: white; /* Color de texto */
-            border: none; /* Sin bordes */
-            padding: 10px 20px; /* Espaciado interno */
-            border-radius: 5px; /* Bordes redondeados */
-            cursor: pointer; /* Cursor tipo pointer */
-        }
-
-        /* Media queries para diseño responsive */
-        @media (max-width: 768px) {
-            /* Ajustes para pantallas menores a 768px */
-            .container {
-                padding: 30px 20px; /* Menos padding en móviles */
-            }
-            
-            /* Cambia la dirección del perfil a columna en móviles */
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            /* Margen inferior para la foto en móviles */
-            .photo-container {
-                margin-bottom: 20px;
-            }
-            
-            /* Centra los iconos sociales en móviles */
-            .social-icons {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Enlace a Font Awesome para iconos -->
 </head>
 <body>
     <!-- Encabezado de la página -->
@@ -311,18 +34,30 @@
                 <div class="name">Manuel Andrades</div> <!-- Nombre -->
                 <div class="username">@andradesdev</div> <!-- Usuario -->
                 <div class="social-icons">
-                    <!-- Iconos sociales (placeholders) -->
-                    <div class="social-icon">Git</div> <!-- GitHub -->
-                    <div class="social-icon">Lin</div> <!-- LinkedIn -->
-                    <div class="social-icon">Tw</div> <!-- Twitter -->
-                    <div class="social-icon">Ig</div> <!-- Instagram -->
+                    <!-- Iconos reales con enlaces -->
+                    <a href="https://github.com/andradesdev" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/manuel-andrades" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/illojuan" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/andrades.dev" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Nuevo icono para CV -->
+                    <a href="CV_ESP.pdf" target="_blank" class="social-icon" title="Descargar CV">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Sección "Sobre mí" -->
+        <h2 class="section-title">Sobre mí</h2>
         <div class="about-me">
-            <h2 class="section-title">Sobre mí</h2>
             <p>Texto placeholder que describe tu carrera profesional. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
         </div>
 
@@ -341,7 +76,10 @@
         <div class="contact-container">
             <!-- Cajas de contacto -->
             <div class="contact-box box5" onclick="openPopup('contact-popup')">Formulario de contacto</div>
-            <div class="contact-box box6" onclick="window.location.href='mailto:contacto@andradesdev.com'">Enviar email</div>
+            <!-- Caja de contacto actualizada para email -->
+            <div class="contact-box box6" onclick="window.location.href='mailto:contacto@andradesdev.com?subject=Contacto desde portfolio&body=Hola Manuel,'">
+                Enviar email
+            </div>
         </div>
     </div>
 
@@ -389,12 +127,11 @@
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('contact-popup')">&times;</span>
             <h3>Contacto</h3>
-            <!-- Formulario de contacto -->
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Email" required>
-                <input type="text" placeholder="Asunto" required>
-                <textarea rows="5" placeholder="Mensaje" required></textarea>
+            <form class="contact-form" action="https://formspree.io/f/xeokgbno" method="POST">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="_replyto" placeholder="Email" required>
+                <input type="text" name="subject" placeholder="Asunto" required>
+                <textarea rows="5" name="message" placeholder="Mensaje" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
         </div>
@@ -402,22 +139,22 @@
 
     <!-- JavaScript para funcionalidad de popups -->
     <script>
-        // Función para abrir popups
-        function openPopup(id) {
-            document.getElementById(id).style.display = "flex";
-        }
+    // Versión corregida de las funciones de popup
+    function openPopup(id) {
+        const popup = document.getElementById(id);
+        popup.classList.add('show'); // Usamos clases en lugar de style directo
+    }
 
-        // Función para cerrar popups
-        function closePopup(id) {
-            document.getElementById(id).style.display = "none";
-        }
+    function closePopup(id) {
+        const popup = document.getElementById(id);
+        popup.classList.remove('show'); // Usamos clases en lugar de style directo
+    }
 
-        // Cerrar popup al hacer clic fuera del contenido
-        window.onclick = function(event) {
-            if (event.target.className === "popup") {
-                event.target.style.display = "none";
-            }
+    window.onclick = function(event) {
+        if (event.target.classList.contains('popup')) {
+            closePopup(event.target.id);
         }
-    </script>
+    }
+    </script>   
 </body>
 </html>
