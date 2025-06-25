@@ -94,7 +94,7 @@
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup1')">&times;</span> <!-- Botón cerrar -->
             <h3>FocusHub</h3>
-            <p>DFocusHub es una aplicación desarrollada en Flutter diseñada para mejorar la productividad del usuario mediante una interfaz intuitiva, tareas organizadas y sesiones de enfoque tipo Pomodoro. Está pensada como una solución multiplataforma, incluyendo su versión web. Este documento describe en detalle el proceso de desarrollo, estructura, tecnologías, despliegue en GitHub Pages y buenas prácticas aplicadas..</p>
+            <p>FocusHub es una aplicación desarrollada en Flutter diseñada para mejorar la productividad del usuario mediante una interfaz intuitiva, tareas organizadas y sesiones de enfoque tipo Pomodoro. Está pensada como una solución multiplataforma, incluyendo su versión web. Este documento describe en detalle el proceso de desarrollo, estructura, tecnologías, despliegue en GitHub Pages y buenas prácticas aplicadas.</p>
         </div>
     </div>
 
@@ -102,7 +102,10 @@
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup2')">&times;</span>
             <h3>Book&Go</h3>
-            <p>Descripción detallada del proyecto 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Este proyecto tiene como finalidad desarrollar una
+plataforma que permita gestionar reservas en distintos ámbitos (como restaurantes, hoteles
+y centros culturales) desde un único lugar, mejorando la experiencia del usuario y facilitando
+la organización y estructura de los establecimientos.</p>
         </div>
     </div>
 
@@ -110,7 +113,7 @@
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup3')">&times;</span>
             <h3>Proyecto AWS con NodeJS</h3>
-            <p>Descripción detallada del proyecto 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Este proyecto tiene como objetivo desplegar una aplicación sencilla desarrollada en Node.js en una máquina virtual de AWS (EC2), conectarla a una base de datos MySQL gestionada por RDS, servir archivos estáticos desde un bucket S3, y automatizar el despliegue continuo usando GitHub Actions.</p>
         </div>
     </div>
 
@@ -118,7 +121,7 @@
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup4')">&times;</span>
             <h3>Proyecto 4</h3>
-            <p>Descripción detallada del proyecto 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>En desarrollo</p>
         </div>
     </div>
 
@@ -137,24 +140,7 @@
         </div>
     </div>
 
-    <!-- JavaScript para funcionalidad de popups -->
-    <script>
-    // Versión corregida de las funciones de popup
-    function openPopup(id) {
-        const popup = document.getElementById(id);
-        popup.classList.add('show'); // Usamos clases en lugar de style directo
-    }
-
-    function closePopup(id) {
-        const popup = document.getElementById(id);
-        popup.classList.remove('show'); // Usamos clases en lugar de style directo
-    }
-
-    window.onclick = function(event) {
-        if (event.target.classList.contains('popup')) {
-            closePopup(event.target.id);
-        }
-    }
-    </script>   
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="scripts.js"></script>
 </body>
 </html>
