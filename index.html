@@ -1,40 +1,26 @@
 <!DOCTYPE html>
-<!-- Declaración del tipo de documento HTML5 -->
 <html lang="es">
-<!-- Elemento raíz del documento, especifica idioma español -->
 <head>
-    <!-- Cabecera del documento (metadatos, enlaces, título) -->
     <meta charset="UTF-8">
-    <!-- Especifica la codificación de caracteres UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configura la vista para dispositivos móviles -->
     <title>andradesDev</title>
-    <!-- Título que aparece en la pestaña del navegador -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <!-- Enlace a Font Awesome para iconos -->
 </head>
 <body>
-    <!-- Encabezado de la página -->
     <header>
         <h1>andradesDev</h1>
     </header>
 
-    <!-- Contenido principal -->
     <div class="container">
-        <!-- Sección de perfil -->
         <div class="profile-section">
             <div class="photo-container">
-                <div class="photo-placeholder">
-                   <img src="assets/foto-perfil.jpg" alt="Foto de Manuel Andrades" class="profile-photo">
-                </div>
+                <img src="assets/foto-perfil.jpg" alt="Foto de Manuel Andrades" class="profile-photo">
             </div>
             <div class="info-container">
-                <div class="name">Manuel Andrades</div> <!-- Nombre -->
-                <div class="username">@andradesdev</div> <!-- Usuario -->
+                <div class="name">Manuel Andrades</div>
+                <div class="username">@andradesdev</div>
                 <div class="social-icons">
-                    <!-- Iconos reales con enlaces -->
                     <a href="https://github.com/andradesdev" target="_blank" class="social-icon">
                         <i class="fab fa-github"></i>
                     </a>
@@ -47,69 +33,57 @@
                     <a href="https://instagram.com/andrades.dev" target="_blank" class="social-icon">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <!-- Nuevo icono para CV -->
-                    <a href="assets/CV_ESP.pdf" target="_blank" class="social-icon" title="Ver CV">
+                    <a href="assets/CV.pdf" target="_blank" class="social-icon" title="Ver CV">
                         <i class="fas fa-file-pdf"></i>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Sección "Sobre mí" -->
         <h2 class="section-title">Sobre mí</h2>
         <div class="about-me">
             <p>Apasionado por el desarrollo de software y la tecnología, me especializo en la creación de aplicaciones web y multiplataforma. Aunque mi experiencia en el sector es limitada, cuento con una sólida formación técnica y una gran capacidad de aprendizaje. Me destaco por mi compromiso, resolución de problemas y habilidades para adaptarme a nuevos entornos y tecnologías.</p>
         </div>
 
-        <!-- Sección de proyectos -->
         <h2 class="section-title">Proyectos</h2>
         <div class="projects-container">
-            <!-- Cajas de proyectos (placeholders) -->
-            <div class="project-box box1" onclick="openPopup('popup1')">Proyecto 1</div>
-            <div class="project-box box2" onclick="openPopup('popup2')">Proyecto 2</div>
-            <div class="project-box box3" onclick="openPopup('popup3')">Proyecto 3</div>
+            <div class="project-box box1" onclick="openPopup('popup1')">FocusHub</div>
+            <div class="project-box box2" onclick="openPopup('popup2')">Book&Go</div>
+            <div class="project-box box3" onclick="openPopup('popup3')">Proyecto AWS</div>
             <div class="project-box box4" onclick="openPopup('popup4')">Proyecto 4</div>
         </div>
 
-        <!-- Sección de contacto -->
         <h2 class="section-title">Contacto</h2>
         <div class="contact-container">
-            <!-- Cajas de contacto -->
             <div class="contact-box box5" onclick="openPopup('contact-popup')">Formulario de contacto</div>
-            <!-- Caja de contacto actualizada para email -->
             <div class="contact-box box6" onclick="window.location.href='mailto:contacto@andradesdev.com?subject=Contacto desde portfolio&body=Hola Manuel,'">
                 Enviar email
             </div>
         </div>
     </div>
 
-    <!-- Pie de página -->
     <footer>
-        <div class="footer-icon">[ICONO]</div> <!-- Icono placeholder -->
-        <div>&copy; 2025 andradesDev. Todos los derechos reservados.</div> <!-- Copyright -->
+        <div class="footer-icon">[ICONO]</div>
+        <div>&copy; 2025 andradesDev. Todos los derechos reservados.</div>
     </footer>
 
-    <!-- Popups de proyectos (hidden por defecto) -->
-    <div id="popup1" class="popup">
+    <div id="popup1" class="popup project-popup">
         <div class="popup-content">
-            <span class="close-popup" onclick="closePopup('popup1')">&times;</span> <!-- Botón cerrar -->
+            <span class="close-popup" onclick="closePopup('popup1')">&times;</span>
             <h3>FocusHub</h3>
             <p>FocusHub es una aplicación desarrollada en Flutter diseñada para mejorar la productividad del usuario mediante una interfaz intuitiva, tareas organizadas y sesiones de enfoque tipo Pomodoro. Está pensada como una solución multiplataforma, incluyendo su versión web. Este documento describe en detalle el proceso de desarrollo, estructura, tecnologías, despliegue en GitHub Pages y buenas prácticas aplicadas.</p>
         </div>
     </div>
 
-    <div id="popup2" class="popup">
+    <div id="popup2" class="popup project-popup">
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup2')">&times;</span>
             <h3>Book&Go</h3>
-            <p>Este proyecto tiene como finalidad desarrollar una
-plataforma que permita gestionar reservas en distintos ámbitos (como restaurantes, hoteles
-y centros culturales) desde un único lugar, mejorando la experiencia del usuario y facilitando
-la organización y estructura de los establecimientos.</p>
+            <p>Este proyecto tiene como finalidad desarrollar una plataforma que permita gestionar reservas en distintos ámbitos (como restaurantes, hoteles y centros culturales) desde un único lugar, mejorando la experiencia del usuario y facilitando la organización y estructura de los establecimientos.</p>
         </div>
     </div>
 
-    <div id="popup3" class="popup">
+    <div id="popup3" class="popup project-popup">
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup3')">&times;</span>
             <h3>Proyecto AWS con NodeJS</h3>
@@ -117,7 +91,7 @@ la organización y estructura de los establecimientos.</p>
         </div>
     </div>
 
-    <div id="popup4" class="popup">
+    <div id="popup4" class="popup project-popup">
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('popup4')">&times;</span>
             <h3>Proyecto 4</h3>
@@ -125,7 +99,6 @@ la organización y estructura de los establecimientos.</p>
         </div>
     </div>
 
-    <!-- Popup de contacto -->
     <div id="contact-popup" class="popup">
         <div class="popup-content">
             <span class="close-popup" onclick="closePopup('contact-popup')">&times;</span>
@@ -140,7 +113,6 @@ la organización y estructura de los establecimientos.</p>
         </div>
     </div>
 
-    <!-- Enlace al archivo JavaScript externo -->
     <script src="scripts.js"></script>
 </body>
 </html>
