@@ -382,6 +382,11 @@ footer {
   color: var(--color-primary);
 }
 
+  .logo-photo {
+    width: 60px;
+    height: 60px;
+  }
+
 /* COLORES DE CAJAS */
 .box1 { 
   background: linear-gradient(135deg, #f94144 0%, #ff6b6b 100%);
@@ -638,6 +643,11 @@ footer {
   .profile-photo {
     width: 120px;
     height: 120px;
+  }
+
+    .logo-photo {
+    width: 60px;
+    height: 60px;
   }
   
   .name {
