@@ -3,43 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Manuel Andrades, desarrollador web y multiplataforma">
-    <title>andradesDev</title>
+    <meta name="description" content="Portafolio profesional de Manuel Andrades, desarrollador web y multiplataforma especializado en aplicaciones modernas">
+    <meta name="keywords" content="desarrollador web, portfolio, aplicaciones web, JavaScript, React, Node.js, Manuel Andrades">
+    <meta name="author" content="Manuel Andrades">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andradesdev.com/">
+    <meta property="og:title" content="Manuel Andrades - Desarrollador Web">
+    <meta property="og:description" content="Portafolio de Manuel Andrades, desarrollador especializado en aplicaciones web y multiplataforma">
+    <meta property="og:image" content="https://andradesdev.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andradesdev.com/">
+    <meta property="twitter:title" content="Manuel Andrades - Desarrollador Web">
+    <meta property="twitter:description" content="Portafolio de Manuel Andrades, desarrollador especializado en aplicaciones web y multiplataforma">
+    <meta property="twitter:image" content="https://andradesdev.com/assets/og-image.jpg">
+    
+    <title>Manuel Andrades | Desarrollador Web - andradesDev</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Estilos de accesibilidad añadidos */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-        
-        :focus {
-            outline: 3px solid #00FF88;
-            outline-offset: 2px;
-        }
-        
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #00FF88;
-            color: #121212;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        
-        .skip-link:focus {
-            top: 0;
-        }
-    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="assets/foto-perfil.jpg" as="image">
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manuel Andrades",
+      "url": "https://andradesdev.com",
+      "image": "https://andradesdev.com/assets/foto-perfil.jpg",
+      "jobTitle": "Desarrollador Web",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "andradesDev"
+      },
+      "sameAs": [
+        "https://github.com/andradesdev",
+        "https://linkedin.com/in/manuel-andrades",
+        "https://instagram.com/andrades.dev"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Enlace para saltar navegación -->
@@ -47,14 +57,17 @@
 
     <header role="banner">
         <h1>andradesDev</h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo claro/oscuro">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
     </header>
 
     <main id="main-content" role="main">
         <div class="container">
-            <section aria-labelledby="profile-heading">
+            <section aria-labelledby="profile-heading" class="fade-in">
                 <div class="profile-section">
                     <div class="photo-container">
-                        <img src="assets/foto-perfil.jpg" alt="Foto de Manuel Andrades" class="profile-photo" width="150" height="150">
+                        <img src="assets/foto-perfil.jpg" alt="Foto de Manuel Andrades" class="profile-photo" width="150" height="150" loading="eager">
                     </div>
                     <div class="info-container">
                         <h2 id="profile-heading" class="name">Manuel Andrades</h2>
@@ -80,16 +93,27 @@
                 </div>
             </section>
 
-            <section aria-labelledby="about-heading">
+            <section aria-labelledby="about-heading" class="fade-in">
                 <h2 id="about-heading" class="section-title">Sobre mí</h2>
                 <div class="about-me">
                     <p>Apasionado por el desarrollo de software y la tecnología, me especializo en la creación de aplicaciones web y multiplataforma. 
                         Aunque mi experiencia en el sector es limitada, cuento con una sólida formación técnica y una gran capacidad de aprendizaje. 
-                        Me destaco por mi compromiso, resolución de problemas y habilidades para adaptarme a nuevos entornos..</p>
+                        Me destaco por mi compromiso, resolución de problemas y habilidades para adaptarme a nuevos entornos y tecnologías.</p>
+                    <div class="skills-container">
+                        <h3>Tecnologías principales:</h3>
+                        <ul class="skills-list" role="list">
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js</li>
+                            <li>Node.js</li>
+                            <li>Flutter</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>Git & GitHub</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <section aria-labelledby="projects-heading">
+            <section aria-labelledby="projects-heading" class="fade-in">
                 <h2 id="projects-heading" class="section-title">Proyectos</h2>
                 <div class="projects-container" role="list">
                     <div class="project-box box1" role="button" tabindex="0" 
@@ -97,33 +121,37 @@
                          onkeydown="if(event.key === 'Enter' || event.key === ' ') { openPopup('popup1'); }"
                          aria-haspopup="dialog"
                          aria-label="Ver detalles del proyecto FocusHub">
-                         FocusHub
+                         <span>FocusHub</span>
+                         <div class="project-tech">Flutter · Firebase · Web</div>
                     </div>
                     <div class="project-box box2" role="button" tabindex="0" 
                          onclick="openPopup('popup2')" 
                          onkeydown="if(event.key === 'Enter' || event.key === ' ') { openPopup('popup2'); }"
                          aria-haspopup="dialog"
                          aria-label="Ver detalles del proyecto Book&Go">
-                         Book&Go
+                         <span>Book&Go</span>
+                         <div class="project-tech">React · Node.js · MongoDB</div>
                     </div>
                     <div class="project-box box3" role="button" tabindex="0" 
                          onclick="openPopup('popup3')" 
                          onkeydown="if(event.key === 'Enter' || event.key === ' ') { openPopup('popup3'); }"
                          aria-haspopup="dialog"
                          aria-label="Ver detalles del proyecto AWS con NodeJS">
-                         Proyecto AWS
+                         <span>Proyecto AWS</span>
+                         <div class="project-tech">AWS · Node.js · MySQL</div>
                     </div>
                     <div class="project-box box4" role="button" tabindex="0" 
                          onclick="openPopup('popup4')" 
                          onkeydown="if(event.key === 'Enter' || event.key === ' ') { openPopup('popup4'); }"
                          aria-haspopup="dialog"
                          aria-label="Ver detalles del proyecto de Ciberseguridad">
-                         Proyecto 4
+                         <span>Ciberseguridad</span>
+                         <div class="project-tech">Python · Seguridad · Redes</div>
                     </div>
                 </div>
             </section>
 
-            <section aria-labelledby="contact-heading">
+            <section aria-labelledby="contact-heading" class="fade-in">
                 <h2 id="contact-heading" class="section-title">Contacto</h2>
                 <div class="contact-container" role="list">
                     <div class="contact-box box5" role="button" tabindex="0" 
@@ -131,13 +159,13 @@
                          onkeydown="if(event.key === 'Enter' || event.key === ' ') { openPopup('contact-popup'); }"
                          aria-haspopup="dialog"
                          aria-label="Abrir formulario de contacto">
-                         Formulario de contacto
+                         <span>Formulario de contacto</span>
                     </div>
                     <div class="contact-box box6" role="button" tabindex="0" 
-                         onclick="window.location.href='mailto:contacto@andradesdev.com?subject=Contacto desde portfolio&body=Hola Manuel,'" 
-                         onkeydown="if(event.key === 'Enter' || event.key === ' ') { window.location.href='mailto:contacto@andradesdev.com?subject=Contacto desde portfolio&body=Hola Manuel,'; }"
+                         onclick="sendEmail()" 
+                         onkeydown="if(event.key === 'Enter' || event.key === ' ') { sendEmail(); }"
                          aria-label="Enviar correo electrónico a contacto@andradesdev.com">
-                         Enviar email
+                         <span>Enviar email</span>
                     </div>
                 </div>
             </section>
@@ -145,10 +173,14 @@
     </main>
 
     <footer role="contentinfo">
-        <div class="footer-icon">
-            <img src="assets/logo.png" alt="Logo de andradesDev" class="logo-photo" width="40" height="40">
+        <div class="footer-content">
+            <div class="footer-icon">
+                <img src="assets/logo.png" alt="Logo de andradesDev" class="logo-photo" width="40" height="40" loading="lazy">
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2025 andradesDev. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <div>&copy; 2025 andradesDev. Todos los derechos reservados.</div>
     </footer>
 
     <!-- Popups de proyectos -->
@@ -158,8 +190,20 @@
                 &times;
             </button>
             <h3 id="popup1-title">FocusHub</h3>
-            <p id="popup1-desc">FocusHub es una aplicación desarrollada en Flutter diseñada para mejorar la productividad del usuario mediante una interfaz intuitiva, tareas organizadas y sesiones de enfoque. 
-                Está pensada como una solución multiplataforma, incluyendo versión web y móvil.</p>
+            <div class="project-meta">
+                <span class="project-date">2024</span>
+                <span class="project-category">Aplicación Multiplataforma</span>
+            </div>
+            <p id="popup1-desc">FocusHub es una aplicación desarrollada en Flutter diseñada para mejorar la productividad del usuario mediante una interfaz intuitiva, tareas organizadas y sesiones de enfoque tipo Pomodoro. 
+                Está pensada como una solución multiplataforma, incluyendo su versión web. Este documento describe en detalle el proceso de desarrollo, estructura, tecnologías, despliegue en GitHub Pages y buenas prácticas aplicadas.</p>
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> Ver demo
+                </a>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Código fuente
+                </a>
+            </div>
         </div>
     </div>
 
@@ -169,7 +213,19 @@
                 &times;
             </button>
             <h3 id="popup2-title">Book&Go</h3>
-            <p id="popup2-desc">Este proyecto tiene como finalidad desarrollar una app que permita crear, gestionar y manejar reservas en distintos ámbitos (como restaurantes, hoteles, centros, etc) desde un único lugar, mejorando la experiencia del usuario y facilitando la organización y estructura de los establecimientos.</p>
+            <div class="project-meta">
+                <span class="project-date">2024</span>
+                <span class="project-category">Platforma Web</span>
+            </div>
+            <p id="popup2-desc">Este proyecto tiene como finalidad desarrollar una plataforma que permita gestionar reservas en distintos ámbitos (como restaurantes, hoteles y centros culturales) desde un único lugar, mejorando la experiencia del usuario y facilitando la organización y estructura de los establecimientos.</p>
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> Ver demo
+                </a>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Código fuente
+                </a>
+            </div>
         </div>
     </div>
 
@@ -178,8 +234,20 @@
             <button class="close-popup" onclick="closePopup('popup3')" aria-label="Cerrar ventana">
                 &times;
             </button>
-            <h3 id="popup3-title">Proyecto AWS/NodeJS</h3>
-            <p id="popup3-desc">Este proyecto tiene como objetivo desplegar una aplicación sencilla desarrollada en Node.js en una máquina virtual de AWS (EC2), conectarla a una base de datos MySQL gestionada por RDS, servir archivos estáticos desde un bucket S3, y automatizar el despliegue usando GitHub Actions.</p>
+            <h3 id="popup3-title">Proyecto AWS con NodeJS</h3>
+            <div class="project-meta">
+                <span class="project-date">2023</span>
+                <span class="project-category">Infraestructura Cloud</span>
+            </div>
+            <p id="popup3-desc">Este proyecto tiene como objetivo desplegar una aplicación sencilla desarrollada en Node.js en una máquina virtual de AWS (EC2), conectarla a una base de datos MySQL gestionada por RDS, servir archivos estáticos desde un bucket S3, y automatizar el despliegue continuo usando GitHub Actions.</p>
+            <div class="project-links">
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> Ver demo
+                </a>
+                <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Código fuente
+                </a>
+            </div>
         </div>
     </div>
 
@@ -189,7 +257,16 @@
                 &times;
             </button>
             <h3 id="popup4-title">Proyecto Ciberseguridad</h3>
-            <p id="popup4-desc">En desarrollo...</p>
+            <div class="project-meta">
+                <span class="project-date">En desarrollo</span>
+                <span class="project-category">Seguridad Informática</span>
+            </div>
+            <p id="popup4-desc">Actualmente trabajando en un proyecto de ciberseguridad que involucra análisis de vulnerabilidades, pruebas de penetración y desarrollo de herramientas de seguridad. Más información próximamente.</p>
+            <div class="project-links">
+                <a href="#" class="project-link disabled" aria-disabled="true">
+                    <i class="fas fa-lock"></i> Próximamente
+                </a>
+            </div>
         </div>
     </div>
 
@@ -200,86 +277,33 @@
                 &times;
             </button>
             <h3 id="contact-popup-title">Contacto</h3>
-            <form class="contact-form" action="https://formspree.io/f/xeokgbno" method="POST">
-                <div>
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeokgbno" method="POST">
+                <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="_replyto" placeholder="Email" required>
+                    <input type="email" id="email" name="_replyto" placeholder="tu.email@ejemplo.com" required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="subject">Asunto</label>
-                    <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                    <input type="text" id="subject" name="subject" placeholder="Motivo de tu mensaje" required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="message">Mensaje</label>
-                    <textarea id="message" rows="5" name="message" placeholder="Mensaje" required></textarea>
+                    <textarea id="message" rows="5" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
                 </div>
-                <button type="submit">Enviar</button>
+                <button type="submit" id="submit-btn" class="submit-button">
+                    <span class="btn-text">Enviar mensaje</span>
+                    <span class="btn-loading" aria-hidden="true">
+                        <i class="fas fa-spinner fa-spin"></i> Enviando...
+                    </span>
+                </button>
             </form>
         </div>
     </div>
 
     <script src="scripts.js"></script>
-    <script>
-        // Funciones de manejo de foco para accesibilidad
-        function managePopupFocus(popupId) {
-            const popup = document.getElementById(popupId);
-            const focusableElements = popup.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            const firstFocusable = focusableElements[0];
-            const lastFocusable = focusableElements[focusableElements.length - 1];
-            
-            // Atrapar el foco dentro del popup
-            popup.addEventListener('keydown', function(e) {
-                if (e.key === 'Tab') {
-                    if (e.shiftKey) {
-                        if (document.activeElement === firstFocusable) {
-                            e.preventDefault();
-                            lastFocusable.focus();
-                        }
-                    } else {
-                        if (document.activeElement === lastFocusable) {
-                            e.preventDefault();
-                            firstFocusable.focus();
-                        }
-                    }
-                }
-                
-                // Cerrar con Escape
-                if (e.key === 'Escape') {
-                    closePopup(popupId);
-                }
-            });
-            
-            // Enfocar el primer elemento
-            firstFocusable.focus();
-        }
-        
-        // Modificar openPopup para manejar el foco
-        function openPopup(id) {
-            const popup = document.getElementById(id);
-            popup.classList.add('show');
-            
-            // Deshabilitar scroll en el fondo
-            document.body.style.overflow = 'hidden';
-            
-            // Manejar foco dentro del popup
-            managePopupFocus(id);
-        }
-        
-        // Modificar closePopup para restaurar el foco
-        function closePopup(id) {
-            const popup = document.getElementById(id);
-            popup.classList.remove('show');
-            
-            // Habilitar scroll
-            document.body.style.overflow = '';
-            
-            // Restaurar foco al elemento que abrió el popup
-            document.querySelector(`[aria-controls="${id}"]`).focus();
-        }
-    </script>
 </body>
 </html>
